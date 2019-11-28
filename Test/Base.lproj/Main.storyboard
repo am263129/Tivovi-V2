@@ -140,7 +140,7 @@
                                                                 <constraint firstAttribute="trailing" secondItem="F15-O8-e17" secondAttribute="trailing" constant="25" id="uWS-Q1-gdR"/>
                                                             </constraints>
                                                         </view>
-                                                        <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IBI-YA-LWB">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IBI-YA-LWB">
                                                             <rect key="frame" x="10" y="130" width="354" height="80"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqM-Wm-tYr">
@@ -149,7 +149,7 @@
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oN2-60-iyc" userLabel="takephoto">
                                                                             <rect key="frame" x="0.0" y="0.0" width="71" height="80"/>
                                                                             <subviews>
-                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sb4-td-JMw">
+                                                                                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sb4-td-JMw">
                                                                                     <rect key="frame" x="13" y="17.5" width="45" height="45"/>
                                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <constraints>
@@ -169,7 +169,7 @@
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyt-K0-ven" userLabel="garanti">
                                                                             <rect key="frame" x="71" y="0.0" width="70.5" height="80"/>
                                                                             <subviews>
-                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhk-za-8fQ">
+                                                                                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhk-za-8fQ">
                                                                                     <rect key="frame" x="12.5" y="17.5" width="45" height="45"/>
                                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <constraints>
@@ -189,7 +189,7 @@
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkI-jc-Z3G" userLabel="share">
                                                                             <rect key="frame" x="141.5" y="0.0" width="71" height="80"/>
                                                                             <subviews>
-                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAC-At-ZmI">
+                                                                                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAC-At-ZmI">
                                                                                     <rect key="frame" x="13" y="17.5" width="45" height="45"/>
                                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <constraints>
@@ -209,7 +209,7 @@
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eun-9f-zXM" userLabel="return">
                                                                             <rect key="frame" x="212.5" y="0.0" width="70.5" height="80"/>
                                                                             <subviews>
-                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eos-kR-tw2">
+                                                                                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eos-kR-tw2">
                                                                                     <rect key="frame" x="13" y="17.5" width="45" height="45"/>
                                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <constraints>
@@ -229,7 +229,7 @@
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4v-Hu-diQ" userLabel="comments">
                                                                             <rect key="frame" x="283" y="0.0" width="71" height="80"/>
                                                                             <subviews>
-                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dns-mx-VY2">
+                                                                                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dns-mx-VY2">
                                                                                     <rect key="frame" x="13" y="17.5" width="45" height="45"/>
                                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <constraints>
@@ -285,6 +285,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="borderConst" destination="3mq-ff-tYM" id="U04-9s-p4E"/>
                                             <outlet property="borderContainerViw" destination="g4M-iQ-CeN" id="Vhd-u0-WPb"/>
                                             <outlet property="borderview" destination="Jzw-QZ-EIa" id="jvy-Zq-QSx"/>
                                             <outlet property="commentsBtn" destination="Dns-mx-VY2" id="hKR-4x-qt0"/>

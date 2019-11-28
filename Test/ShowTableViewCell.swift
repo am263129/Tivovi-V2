@@ -15,6 +15,7 @@ class ShowTableViewCell: UITableViewCell {
     @IBOutlet weak var expendshowView: UIView!
     @IBOutlet weak var expendButton: UIButton!
     @IBOutlet weak var borderview: UIView!
+    @IBOutlet weak var borderConst: NSLayoutConstraint!
     
     
     
@@ -24,7 +25,8 @@ class ShowTableViewCell: UITableViewCell {
     @IBOutlet weak var returnBtn: UIButton!
     @IBOutlet weak var commentsBtn: UIButton!
     
-    
+    var show = true
+    var hide = false
     var isAnimated = true
     // All animations are done with the same length of duration --- 1.0 second
     let durationOfAnimationInSecond = 3.0
@@ -46,8 +48,7 @@ class ShowTableViewCell: UITableViewCell {
         returnBtn.layer.cornerRadius = 5
         commentsBtn.layer.cornerRadius = 5
         expendButton.layer.cornerRadius = 5
-        
-        
+                
     }
     
     
@@ -60,24 +61,75 @@ class ShowTableViewCell: UITableViewCell {
     
 
     @IBAction func expendButton(_ sender: UIButton) {
-        expendshowView.isHidden = !expendshowView.isHidden
-
         
-
-    
-        
-
-        if (!expendshowView.isHidden)
-        {
+        if expendshowView.isHidden{
+            UIView.animate(withDuration: 0.5){
+                self.borderConst.constant = 2
+                self.layoutIfNeeded()
+                self.expendshowView.isHidden = false
+            }
             sender.setImage(UIImage(named: "minusBtn"), for: UIControl.State.normal)
-            transitionAnimation(view: expendshowView, animationOptions: .autoreverse, isReset: expendshowView.isHidden)
+            showAnimation()
         }
-        else {
+        else{
+            hideAll()
+            UIView.animate(withDuration: 0.5){
+                self.borderConst.constant = 30
+                self.layoutIfNeeded()
+                self.expendshowView.isHidden = true
+            }
             sender.setImage(UIImage(named: "addBtn"), for: UIControl.State.normal)
-            transitionAnimation(view: expendshowView, animationOptions: .autoreverse, isReset: expendshowView.isHidden)
         }
-    }
 
+    }
+func showAnimation() {
+        
+        perform(#selector(animate_photo), with: show, afterDelay: 1)
+        perform(#selector(animate_garanti), with: show, afterDelay: 0.8)
+        perform(#selector(animate_share), with: show, afterDelay: 0.6)
+        perform(#selector(animate_return), with: show, afterDelay: 0.4)
+        perform(#selector(animate_comments), with: show, afterDelay: 0.2)
+       
+    }
+    func hideAll(){
+        takephotoBtn.alpha = 0
+        garantidateBtn.alpha = 0
+        shareBtn.alpha = 0
+        returnBtn.alpha = 0
+        commentsBtn.alpha = 0
+    }
+    
+    @objc func animate_photo(){
+
+        UIView.animate(withDuration: 0.5){                self.takephotoBtn.alpha = 1
+            }
+        
+    }
+    @objc func animate_garanti(){
+
+        UIView.animate(withDuration: 0.5){                self.garantidateBtn.alpha = 1
+            }
+        
+    }
+    @objc func animate_share(){
+
+        UIView.animate(withDuration: 0.5){                self.shareBtn.alpha = 1
+            }
+        
+    }
+    @objc func animate_return(){
+ 
+        UIView.animate(withDuration: 0.5){                self.returnBtn.alpha = 1
+            }
+        
+    }
+    @objc func animate_comments(){
+
+        UIView.animate(withDuration: 0.5){                self.commentsBtn.alpha = 1
+            }
+        
+    }
+    
     func curveAnimation(view: UIView, animationOptions: UIView.AnimationOptions, isReset: Bool) {
       let defaultXMovement: CGFloat = 240
       UIView.animate(withDuration: durationOfAnimationInSecond, delay: 0, options: animationOptions, animations: {
@@ -89,7 +141,6 @@ class ShowTableViewCell: UITableViewCell {
     
     func transitionAnimation(view: UIView, animationOptions: UIView.AnimationOptions, isReset: Bool) {
       UIView.transition(with: view, duration: durationOfAnimationInSecond, options: animationOptions, animations: {
-//        view.backgroundColor = UIColor.init(named: isReset ? "lightblue" :  "darkred")
         view.alpha = 1
       }, completion: nil)
     }

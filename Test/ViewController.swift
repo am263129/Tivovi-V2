@@ -21,21 +21,31 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
     }
     var blocks = [block]()
     var newBlock : block!
+    var cellHeights: [IndexPath: CGFloat] = [:]
+    var isExtend:Bool = false
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
         initData()
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 124
+        tableView.estimatedRowHeight = 200
     }
       func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-                 return 200
+        return !isExtend ? 200 : 240
       }
       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          return 3
       }
-      
+      func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+          cellHeights[indexPath] = cell.frame.size.height
+      }
+        func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+            return cellHeights[indexPath] ?? UITableView.automaticDimension
+        }
+    
       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
           let cellIdentifier = "ShowTableViewCell"
@@ -51,14 +61,14 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
         cell.shareBtn.addTarget(self, action: #selector(share(_ :)), for: .touchUpInside)
         return cell
       }
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        if (indexPath.endIndex == 1) {
-            return  80
-        }
-        else {
-            return 40
-        }
-    }
+//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if (indexPath.endIndex == 1) {
+//            return  80
+//        }
+//        else {
+//            return 40
+//        }
+//    }
     @objc func takePhoto(_ sender: UIButton) {
         self.imagePicker.present(from: sender)
         
@@ -175,6 +185,8 @@ extension Hashable {
         UIApplication.topViewController?.present(activity, animated: true, completion: nil)
     }
 }
+
+
 
 
 
