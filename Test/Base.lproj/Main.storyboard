@@ -292,6 +292,7 @@
                                             <outlet property="expendButton" destination="7cL-Uf-Eb1" id="PKV-b6-7TL"/>
                                             <outlet property="expendshowView" destination="IBI-YA-LWB" id="RrG-2r-XNN"/>
                                             <outlet property="garantidateBtn" destination="yhk-za-8fQ" id="5cj-xh-dNq"/>
+                                            <outlet property="productID" destination="ymI-aX-YjC" id="JxL-JH-2WT"/>
                                             <outlet property="returnBtn" destination="Eos-kR-tw2" id="jmc-eU-qva"/>
                                             <outlet property="shareBtn" destination="WAC-At-ZmI" id="VX4-aJ-Wn6"/>
                                             <outlet property="takephotoBtn" destination="sb4-td-JMw" id="T8y-96-vns"/>
@@ -321,6 +322,9 @@
                                                 <state key="normal" image="plus.circle.fill" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="addBlock:" destination="KCS-1o-YCl" eventType="touchUpInside" id="eVw-Q7-hv1"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -352,6 +356,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="p8E-P7-KRu"/>
                     <connections>
+                        <outlet property="inputProductId" destination="Xzj-ek-N5i" id="w1t-jK-JAK"/>
                         <outlet property="tableView" destination="eYA-4c-9pY" id="ina-Sx-Agb"/>
                     </connections>
                 </viewController>

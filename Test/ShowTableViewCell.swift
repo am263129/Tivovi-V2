@@ -17,6 +17,7 @@ class ShowTableViewCell: UITableViewCell {
     @IBOutlet weak var borderview: UIView!
     @IBOutlet weak var borderConst: NSLayoutConstraint!
     
+    @IBOutlet weak var productID: UILabel!
     
     
     @IBOutlet weak var takephotoBtn: UIButton!

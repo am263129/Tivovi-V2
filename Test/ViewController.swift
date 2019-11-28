@@ -21,9 +21,11 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
     }
     var blocks = [block]()
     var newBlock : block!
+    var arrayBlock = ["1232233232414","123213123142","12314153463745"]
     var cellHeights: [IndexPath: CGFloat] = [:]
     var isExtend:Bool = false
     
+    @IBOutlet weak var inputProductId: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +39,7 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
         return !isExtend ? 200 : 240
       }
       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         return 3
+        return arrayBlock.count
       }
       func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
           cellHeights[indexPath] = cell.frame.size.height
@@ -59,6 +61,7 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
         cell.commentsBtn.addTarget(self, action: #selector(makeComment(_:)), for: .touchUpInside)
         cell.returnBtn.addTarget(self, action: #selector(selectReturnDate(_:)), for: .touchUpInside)
         cell.shareBtn.addTarget(self, action: #selector(share(_ :)), for: .touchUpInside)
+        cell.productID.text = arrayBlock[indexPath.row]
         return cell
       }
 //    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -69,6 +72,10 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
 //            return 40
 //        }
 //    }
+    @IBAction func addBlock(_ sender: UIButton) {
+        arrayBlock.append(inputProductId.text ?? "8877363838872")
+        tableView.reloadData()
+    }
     @objc func takePhoto(_ sender: UIButton) {
         self.imagePicker.present(from: sender)
         
