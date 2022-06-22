@@ -1,2 +1,6 @@
 # Tivovi-V2
-IOS animation 
+Tivovi IOS version.
+
+Swift project 
+Build with Xcode
+

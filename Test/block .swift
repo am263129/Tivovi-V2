@@ -10,7 +10,7 @@ import Foundation
 
 
 class block {
-    var name : String = ""
+    var name : String = " "
     var id : String = ""
     var numPhoto : Int = 0
 }

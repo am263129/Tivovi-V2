@@ -3,7 +3,9 @@ import UIKit
 public protocol ImagePickerDelegate: class {
     func didSelect(image: UIImage?)
 }
-
+/**
+* Image picker.
+**/
 open class ImagePicker: NSObject {
 
     private let pickerController: UIImagePickerController
@@ -48,7 +50,7 @@ open class ImagePicker: NSObject {
             alertController.addAction(action)
         }
         
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Cancel ", style: .cancel, handler: nil))
 
         if UIDevice.current.userInterfaceIdiom == .pad {
             alertController.popoverPresentationController?.sourceView = sourceView
